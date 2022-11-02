@@ -35,6 +35,7 @@ $ cd Tap-Ninja-Autoclicker
 
 # Compile & Run
 $ javac Main.java && java Main
+```
 
 ## Merci à ...
 
