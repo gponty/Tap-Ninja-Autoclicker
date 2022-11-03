@@ -5,12 +5,16 @@ public class Main {
         long lastUpdate = System.currentTimeMillis();
         long lastUpdateElevation = System.currentTimeMillis();
 
-        System.out.println("debut");
-
         while (true) {
 
             // On click tout le temps pour simuler un coup de katana
             ac.clickFenetre();
+
+            // On lance le grappin
+            ac.grappin();
+
+            // On lance les sherikun
+            ac.sherikun();
 
             // Toutes les 2 secondes on upgrade Batiments et ameliorations
             if (System.currentTimeMillis() - lastUpdate > 2000) {

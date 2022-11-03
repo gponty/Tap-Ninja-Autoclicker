@@ -22,7 +22,9 @@ public class AutoClicker {
             "2335-401", // 6 - click bouton elevation
             "2009-1064", // 7 - click confirmation elevation
             "2328-402", // 8 - Bouton amelioration acheter tout tier 1 - 10
-            "2318-794" // 9 - Bouton amelioration tier 12
+            "2318-794", // 9 - Bouton amelioration tier 12
+            "155-1334", // 10 - Grappin
+            "364-1302" // 11 - Sherikun
     };
 
     public AutoClicker() {
@@ -41,7 +43,6 @@ public class AutoClicker {
         int[] coord = this.getLocation(0);
         this.r.mouseMove(coord[0], coord[1]);
         this.click(false);
-
     }
 
     /**
@@ -69,10 +70,12 @@ public class AutoClicker {
      */
     public void clickBuyAllBatiment() {
         System.out.println("Click Batiment");
-        this.r.mouseMove(2528, 1227);
+        int[] coord = this.getLocation(1);
+        this.r.mouseMove(coord[0], coord[1]);
         this.click(true);
         System.out.println("Click Acheter tout");
-        this.r.mouseMove(2376, 1389);
+        coord = this.getLocation(2);
+        this.r.mouseMove(coord[0], coord[1]);
         this.click(true);
     }
 
@@ -81,10 +84,11 @@ public class AutoClicker {
      */
     public void clickBuyAllAmelioration() {
         System.out.println("Click Amelioration");
-        this.r.mouseMove(2490, 1083);
+        int[] coord = this.getLocation(3);
+        this.r.mouseMove(coord[0], coord[1]);
         this.click(true);
 
-        int[] coord = this.getLocation(4);
+        coord = this.getLocation(4);
         if (this.isGreen(coord[0], coord[1])) {
             System.out.println("Click Acheter tout tier 11");
             this.r.mouseMove(coord[0], coord[1]);
@@ -165,6 +169,26 @@ public class AutoClicker {
         if (pause) {
             this.pause();
         }
+    }
+
+    /**
+     * On lance le grappin
+     */
+    public void grappin() {
+        System.out.println("Click grappin");
+        int[] coord = this.getLocation(10);
+        this.r.mouseMove(coord[0], coord[1]);
+        this.click(true);
+    }
+
+    /**
+     * On lance les sherikun
+     */
+    public void sherikun() {
+        System.out.println("Click sherikun");
+        int[] coord = this.getLocation(11);
+        this.r.mouseMove(coord[0], coord[1]);
+        this.click(true);
     }
 
     /**
