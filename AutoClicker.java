@@ -21,7 +21,8 @@ public class AutoClicker {
             "2496-936", // 5 - click menu elevation
             "2335-401", // 6 - click bouton elevation
             "2009-1064", // 7 - click confirmation elevation
-            "2328-402" // 8 - Bouton amelioration acheter tout tier 1 - 10
+            "2328-402", // 8 - Bouton amelioration acheter tout tier 1 - 10
+            "2318-794" // 9 - Bouton amelioration tier 12
     };
 
     public AutoClicker() {
@@ -86,6 +87,13 @@ public class AutoClicker {
         int[] coord = this.getLocation(4);
         if (this.isGreen(coord[0], coord[1])) {
             System.out.println("Click Acheter tout tier 11");
+            this.r.mouseMove(coord[0], coord[1]);
+            this.click(true);
+        }
+
+        coord = this.getLocation(9);
+        if (this.isGreen(coord[0], coord[1])) {
+            System.out.println("Click Acheter tout tier 12");
             this.r.mouseMove(coord[0], coord[1]);
             this.click(true);
         }
